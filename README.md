@@ -2,7 +2,7 @@
 
 造作画布是一款面向 AI 图片、视频和音频工作流的 Windows 本地可视化画布。
 
-**[直接下载造作画布 v0.2.7](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/download/v0.2.7/ZZHB-0.2.7-win-x64.zip)** · [画布使用手册](https://acaiy.cn/article/canvas-guide/) · [查看 v0.2.7 发布说明](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/tag/v0.2.7) · [全部历史版本](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases)
+**[直接下载造作画布 v0.5.0](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/download/v0.5.0/ZZHB-0.5.0-win-x64.zip)** · [画布使用手册](https://acaiy.cn/article/canvas-guide/) · [查看 v0.5.0 发布说明](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/tag/v0.5.0) · [全部历史版本](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases)
 
 你可以在同一个项目里整理参考图、提示词、音频、视频、模型结果和设计说明，再把它们连接成可持续修改的工作流程。本仓库只用于发布 Windows 成品和公开使用说明，不提供商业产品源码。
 
@@ -21,7 +21,7 @@
 
 ## 下载与安装
 
-1. 下载 [`ZZHB-0.2.7-win-x64.zip`](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/download/v0.2.7/ZZHB-0.2.7-win-x64.zip)。
+1. 下载 [`ZZHB-0.5.0-win-x64.zip`](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/download/v0.5.0/ZZHB-0.5.0-win-x64.zip)。
 2. 将 ZIP **完整解压**到普通文件夹，不要直接在压缩包内运行。
 3. 双击 `ZZHB\ZZHB.exe`，等待本地服务启动并自动打开 Windows 默认浏览器。
 4. 使用期间保持程序运行；关闭程序会同时停止本地服务。
@@ -30,33 +30,35 @@
 
 ## 第一次使用
 
-- 打开“模型与供应商”，自行添加官方或第三方模型服务提供商的连接和 API Key；也可以连接自己的 ComfyUI。
+- 打开“模型与供应商”，按需填写官方或第三方服务的 API Key；发布包内置的连接模板不包含任何 Key。也可以连接自己的 ComfyUI。
+- Agent 已内置固定版本的 OpenAI 官方 Codex CLI，不需要另行安装；第一次使用仍需按提示完成当前 Windows 用户的 Codex 登录。
 - 模型调用可能产生费用，网络、价格、额度、隐私政策和模型可用性由所选服务决定，请先从少量测试开始。
 - 不要公开分享 API Key，也不要在 Issue 中粘贴 Key、客户资料、私人项目、未脱敏截图或完整日志。
 - ComfyUI 工作流需要你自行安装并启动对应的本机或云端 ComfyUI 服务，再填写可访问的 Base URL。
 
-## v0.2.7 主要更新
+## v0.5.0 主要更新
 
-这一版重点补强了长任务恢复、生成过程追溯和项目整理：
+这一版把画布、项目、Agent、笔记和情绪板整合成更完整的本地工作空间：
 
-- **ComfyUI 长任务更可靠**：支持预览、刷新或本地服务重启后找回原任务、安全取消，并可把已有结果接回画布。
-- **生成历史可追溯、可复用**：图片、视频和 ComfyUI 历史可以查看当次实际输入，并在确认后精确复用当时的提示词、素材、角色与顺序。
-- **MiniMax H3 2K 路径补全**：增加视频规格预检、中断恢复、旧任务找回和真实媒体时长读取。
-- **首页项目管理增强**：支持项目封面、单层文件夹、单个或批量移动、批量移入垃圾箱，以及批量导出画布模板和项目备份。
-- **大图体验改善**：画布采用分级预览，单张图片上传上限提高到 200MB，并支持按需查看原图。
-- **视频与对话修复**：改进视频真实时长、视频对比播放和相关恢复状态；文字附件可在设定的记忆轮数内参与后续对话。
+- **项目文件更可控**：新项目保存到你选择的普通文件夹；首页可重新关联项目目录，并区分项目备份导入与画布模板导入。
+- **项目 Agent 正式整合**：Agent 可以结合当前项目、画布选中内容和项目文件继续工作，支持对话历史、续聊、分叉、停止、审批和结果回到画布。
+- **Codex CLI 随包提供**：内置 OpenAI 官方 Windows x64 Codex CLI `0.153.4`，解压后无需再单独安装 CLI；登录和个人配置仍归当前 Windows 用户所有。
+- **独立项目笔记**：Notes 可在项目内持续记录文字、清单和结构化内容，并与 Agent、画布共享同一项目上下文。
+- **情绪板能力扩展**：栏目、内容板、本地图片、文档、表格和专属连线已进入整合版，便于把灵感资料与制作任务放在同一画布。
+- **模板与备份更清楚**：首页提供三份官方模板；模板用于复用画布结构，项目备份用于迁移完整项目，两类入口和反馈不再混淆。
+- **模型配置更新**：发布包提供 53 条无 Key 连接，TK、LK、AM 按固定顺序显示；三家均加入 GPT-6、Gemini 3.8 Flash、Gemini 3.7 Flash，MiniMax 官方独立归入“官方来源”。
 
 ## 下载校验
 
 | 项目 | 内容 |
 | --- | --- |
-| 文件名 | `ZZHB-0.2.7-win-x64.zip` |
-| 文件大小 | 75,725,673 bytes |
-| SHA-256 | `c00c0c20ab9af3f2be6c2e99af77049735edf08d74d02311c6780a6755f3dd6b` |
+| 文件名 | `ZZHB-0.5.0-win-x64.zip` |
+| 文件大小 | 225,571,345 bytes |
+| SHA-256 | `d5b43016e4abf9d9d96f4cd5435d67dd160018e43c94da2e6b5eddda0ad30ae2` |
 
 ## 已知边界
 
-文件夹嵌套、排序、搜索、标签和文件夹整体导入 / 导出尚未提供。旧 H3 或 ComfyUI 任务能否找回取决于原服务是否仍允许查询该任务；部分付费路径和具体自定义 ComfyUI 节点的兼容性取决于用户选择的服务、网络条件和节点定义。大项目性能仍在持续优化。本说明不表示所有真实付费渠道、所有公网素材服务或所有自定义节点组合都已经完成验证。
+程序当前尚未代码签名，Windows 可能提示“未知发布者”。Agent 虽已内置 Codex CLI，但不会携带登录信息、Skills、MCP、API Key 或 Token；未登录时不影响画布其它功能。具体模型、付费路径、联网能力和自定义 ComfyUI 节点仍取决于用户自己的账号、服务、网络和节点定义。本说明不表示所有真实付费渠道、所有公网素材服务或所有自定义节点组合都已经完成验证。
 
 ## 使用范围
 
