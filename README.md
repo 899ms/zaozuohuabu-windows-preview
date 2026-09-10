@@ -2,7 +2,7 @@
 
 造作画布是一款面向 AI 图片、视频和音频工作流的 Windows 本地可视化画布。
 
-**[直接下载造作画布 v0.5.1](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/download/v0.5.1/ZZHB-0.5.1-win-x64.zip)** · [画布使用手册](https://acaiy.cn/article/canvas-guide/) · [查看 v0.5.1 发布说明](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/tag/v0.5.1) · [全部历史版本](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases)
+**[直接下载造作画布 v0.5.2](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/download/v0.5.2/ZZHB-0.5.1-win-x64.zip)** · [画布使用手册](https://acaiy.cn/article/canvas-guide/) · [查看 v0.5.2 发布说明](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/tag/v0.5.2) · [全部历史版本](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases)
 
 你可以在同一个项目里整理参考图、提示词、音频、视频、模型结果和设计说明，再把它们连接成可持续修改的工作流程。本仓库只用于发布 Windows 成品和公开使用说明，不提供商业产品源码。
 
@@ -12,17 +12,9 @@
 
 <img width="1718" height="815" alt="造作画布工作流界面" src="https://github.com/user-attachments/assets/07815762-94f0-46b3-b6cc-fc62d322f36e" />
 
-欢迎加入 画布交流群！反馈问题、交流使用体验或提出新功能建议。
-
-<img width="400" height="400" alt="PixPin_2026-09-08_22-18-17" src="https://github.com/user-attachments/assets/9b22bfd9-2af5-4aaf-95da-1c4f52767d19" />
-
-
-
-
-
 ## 下载与安装
 
-1. 下载 [`ZZHB-0.5.1-win-x64.zip`](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/download/v0.5.1/ZZHB-0.5.1-win-x64.zip)。
+1. 下载 [`ZZHB-0.5.1-win-x64.zip`](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/download/v0.5.2/ZZHB-0.5.1-win-x64.zip)。
 2. 将 ZIP **完整解压**到普通文件夹，不要直接在压缩包内运行。
 3. 双击 `ZZHB\ZZHB.exe`，等待本地服务启动并自动打开 Windows 默认浏览器。
 4. 使用期间保持程序运行；关闭程序会同时停止本地服务。
@@ -37,26 +29,25 @@
 - 不要公开分享 API Key，也不要在 Issue 中粘贴 Key、客户资料、私人项目、未脱敏截图或完整日志。
 - ComfyUI 工作流需要你自行安装并启动对应的本机或云端 ComfyUI 服务，再填写可访问的 Base URL。
 
-## v0.5.1 主要更新
+## v0.5.2 主要更新
 
-这一版在现有完整工作空间基础上，进一步修正项目目录、Agent、Notes 与模型预设：
+这一版在现有完整工作空间基础上，补充图片编辑、全景查看和生成节点交互，并同步新用户默认模型清单：
 
-- **项目目录更直接**：普通新建项目直接使用你选择的已有资料目录，不再额外创建项目名称子目录；模板、备份和副本仍使用独立目录。
-- **Agent 工作目录更稳**：Agent 可以结合当前项目、画布选中内容和项目文件继续工作；工作目录支持切换、移除和重新选择。
-- **Codex CLI 随包提供**：内置 OpenAI 官方 Windows x64 Codex CLI `0.153.4`，解压后无需再单独安装 CLI；登录和个人配置仍归当前 Windows 用户所有。
-- **独立项目笔记**：Notes 支持“继续写作”和自动补全；还可在目标目录右键新建文件夹、笔记和表格，并直接在原位置命名。
-- **Midjourney 使用更顺手**：历史提示词与参数可以分开复用；常用生成设置可以保存为跨项目预设，并可指定全局默认。
-- **情绪板能力扩展**：栏目、内容板、本地图片、文档、表格和专属连线已进入整合版，便于把灵感资料与制作任务放在同一画布。
-- **模板与备份更清楚**：首页提供三份官方模板；模板用于复用画布结构，项目备份用于迁移完整项目，两类入口和反馈不再混淆。
-- **模型配置更新**：发布包提供 57 条无 Key 连接；TK 与 APIMart 各新增 GPT Image 2.5 Sunburst / Flare，TK、LK、AM 按固定顺序显示，MiniMax 官方归入“官方来源”，TK Base URL 更新为 `https://store.forcepic.com/`。
+- **图片标注与蒙版**：图片标注栏支持蒙版绘制、擦除、反选、撤销、重做、保存和导出；普通标注与蒙版相互独立。
+- **可编辑曲线箭头**：箭头支持拖动控制点，并可增加或减少控制点。
+- **360° 全景节点**：可以在画布内查看全景图片、拖动视角、滚轮缩放和全屏浏览。
+- **GPT Image 2.5**：Sunburst / Flare 的 Images 通道增加蒙版编辑和透明背景选项；相关预设均保留最多 16 张输入图能力。
+- **生成节点体验**：图片质量显示改为简短标签，失败任务提供重试图标。
+- **模型配置同步**：全新数据目录默认提供 47 条无 Key 连接，TK、LK、AM 按固定顺序显示，MiniMax 官方位于“官方来源”；TK Base URL 为 `https://store.forcepic.com/`。已有用户配置不会因升级被清理或覆盖。
+- **Codex CLI 随包提供**：内置 OpenAI 官方 Windows x64 Codex CLI `0.153.4`，无需另行安装；登录和个人配置仍归当前 Windows 用户所有。
+- **Notes 与 Midjourney**：Notes 继续支持手动续写和自动补全；Midjourney 继续支持提示词/参数分开复用、跨项目生成预设和全局默认设置。
 
 ## 下载校验
-
 | 项目 | 内容 |
 | --- | --- |
 | 文件名 | `ZZHB-0.5.1-win-x64.zip` |
-| 文件大小 | 225,576,960 bytes |
-| SHA-256 | `9deb5e223875f7d3900b7d6e233c36c823eb54afd63ebecf417be9d376f58dc2` |
+| 文件大小 | 225,728,239 bytes |
+| SHA-256 | `f87777867667160ab2339038beac4a3d3f8b655c82e38b27fe6ae83b25ac88ba` |
 
 ## 已知边界
 
