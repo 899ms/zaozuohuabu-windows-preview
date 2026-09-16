@@ -12,6 +12,10 @@
 
 <img width="1718" height="815" alt="造作画布工作流界面" src="https://github.com/user-attachments/assets/07815762-94f0-46b3-b6cc-fc62d322f36e" />
 
+欢迎加入画布交流群
+<img width="405" height="403" alt="PixPin_2026-09-16_20-25-57" src="https://github.com/user-attachments/assets/6de8c40f-a8fc-47d6-ba4a-0beb4b9dd3b3" />
+
+
 ## 下载与安装
 
 1. 下载 [`ZZHB-0.5.1-win-x64.zip`](https://github.com/yangwc18181/zaozuohuabu-windows-preview/releases/download/v0.5.2/ZZHB-0.5.1-win-x64.zip)。
